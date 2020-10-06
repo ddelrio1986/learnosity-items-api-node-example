@@ -33,6 +33,8 @@ app.get('/', function (req, res) {
     }
   )
 
+  console.log(learnosityRequest)
+
   res.render('index', { learnosityRequest })
 });
 
