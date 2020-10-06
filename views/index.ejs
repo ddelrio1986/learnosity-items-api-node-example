@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Learnosity SDK - NodeJS</title>
+</head>
+<body>
+<div id="learnosity_assess"></div>
+<script src="https://items.learnosity.com/"></script>
+<script>
+  const learnosityRequest = <%- JSON.stringify(learnosityRequest) %>;
+
+  const callbacks = {
+    errorListener: function (e) {
+      // Adds a listener to all error codes.
+      console.log("Error Code ", e.code);
+      console.log("Error Message ", e.msg);
+      console.log("Error Detail ", e.detail);
+    },
+
+    readyListener: function () {
+      console.log("Learnosity Items API is ready");
+    }
+  };
+
+  console.log(learnosityRequest);
+
+  const itemsApp = LearnosityItems.init(learnosityRequest, callbacks);
+</script>
+</body>
+</html>
